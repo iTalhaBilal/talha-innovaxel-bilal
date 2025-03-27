@@ -23,6 +23,10 @@ async function generateShortUrl(req, res) {
     }
 }
 
+
 module.exports = {
     generateShortUrl
+
 };
+
+
