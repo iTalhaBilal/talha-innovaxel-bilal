@@ -1,19 +1,28 @@
+const shortid = require('shortid');
+const URL = require("../model/schema");
 
-const { nanoid } = require('nanoid')
-const URL = require("../model/schema")
 async function generateShortUrl(req, res) {
-    const body = await req.body
-    if (!body) return res.status(400).json({ error: "Enter a URL" });
-    const myUrl = nanoid(10)
-    await URL.create({
-        shortCode: myUrl,
-        url: body.url,
-        accessCount: 0
-    })
+    try {
+        const { url } = req.body; // ✅ Destructure `url` from body
 
-    return res.json({ short: myUrl })
+        if (!url) return res.status(400).json({ error: "Enter a URL" });
+
+        const myUrl = shortid.generate(); // ✅ Fix: Use `shortid.generate()`
+
+        const newUrl = await URL.create({
+            shortCode: myUrl,
+            url: url,
+            accessCount: 0
+        });
+
+        return res.status(201).json({ message: "Short URL created!", data: newUrl });
+
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
 }
 
 module.exports = {
     generateShortUrl
-}
+};
