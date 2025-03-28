@@ -38,7 +38,7 @@ async function deletedUrl(req, res) {
         const newUrl = await URL.findOneAndDelete({
             shortCode: url,
         });
-
+        if (!newUrl) return res.status(404).json({ error: "No Such Short Id exists!" })
         return res.status(204).json({ message: "Short URL Deleted!" });
 
     } catch (error) {
