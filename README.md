@@ -64,7 +64,7 @@ This project follows the **Model-View-Controller (MVC)** design pattern for bett
 ## 📸 API Implementation (Screenshots)  
 
 ### 1️⃣ Create Short URL  
-![Create Short URL](screenshots/create.png)  
+![Create Short URL](https://github.com/iTalhaBilal/talha-innovaxel-bilal/blob/dev/screenshots/create.PNG?raw=true)  
 
 ### 2️⃣ Get Original URL  
 ![Get Original URL](screenshots/get.png)  
