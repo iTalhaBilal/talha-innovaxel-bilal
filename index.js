@@ -34,5 +34,16 @@ app.put('/:shortId', async (req, res) => {
     return res.status(200).json({ message: `Url Updated from ${shortId} to ${newShortId}`, data: updatedUrl })
 })
 
+app.delete('/:shortId', async (req, res) => {
+    const shortId = req.params.shortId
+
+    const deletedUrl = await URL.findOneAndDelete({
+        shortCode: shortId
+    })
+    if (!deletedUrl) return res.status(404).json({ error: "No such URL exists" })
+
+    return res.status(204).json({ message: `Short URL ${shortId} deleted successfully` })
+})
+
 app.use("/shorten", urlRoute)
 app.listen(PORT, () => console.log("Server Started!"))
