@@ -67,12 +67,12 @@ This project follows the **Model-View-Controller (MVC)** design pattern for bett
 ![Create Short URL](https://github.com/iTalhaBilal/talha-innovaxel-bilal/blob/dev/screenshots/create.PNG?raw=true)  
 
 ### 2️⃣ Get Original URL  
-![Get Original URL](screenshots/get.png)  
+![Get Original URL with Count Increment](https://github.com/iTalhaBilal/talha-innovaxel-bilal/blob/dev/screenshots/get.PNG?raw=true)  
 
 ### 3️⃣ Update Short URL  
-![Update Short URL](screenshots/update.png)  
+![Update Short URL](https://github.com/iTalhaBilal/talha-innovaxel-bilal/blob/dev/screenshots/update.PNG?raw=true)  
 
 ### 4️⃣ Delete Short URL  
-![Delete Short URL](screenshots/delete.png)  
+![Delete Short URL](https://github.com/iTalhaBilal/talha-innovaxel-bilal/blob/dev/screenshots/delete.PNG?raw=true)  
 
 
