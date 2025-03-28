@@ -30,15 +30,13 @@ async function deletedUrl(req, res) {
     console.log("DELETE API HIT")
 
     try {
-        const { url } = req.body;
-
-        if (!urlencoded) return res.status(400).json({ error: "Enter a ShortId" });
+        const shortId = req.params.shortId
 
 
         const newUrl = await URL.findOneAndDelete({
-            shortCode: url,
+            shortCode: shortId,
         });
-
+        if (!newUrl) return res.status(404).json({ error: "No Such Short Id exists!" })
         return res.status(204).json({ message: "Short URL Deleted!" });
 
     } catch (error) {
